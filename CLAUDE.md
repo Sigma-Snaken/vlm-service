@@ -27,16 +27,6 @@ python3 -m pytest tests/test_schema.py -v
 python3 -m pytest tests/test_provider.py::TestGeminiProviderInspection::test_generate_inspection_basic -v
 ```
 
-## Real Integration Tests
-
-`scripts/real_test.py` — CLI for testing with real Gemini API calls and patrol photos/videos.
-```bash
-python3 scripts/real_test.py --module schema          # no API key needed
-python3 scripts/real_test.py --module inspect --api-key KEY
-python3 scripts/real_test.py --all --api-key KEY
-```
-Test data lives in sibling project: `/home/snaken/CodeBase/visual-patrol/data/robot-a/report/`
-
 ## Architecture
 
 The package is a thin, sync-only wrapper around `google-genai`. All modules are independent and compose together at the caller level.
@@ -71,7 +61,3 @@ vlm_service/
 ## Gotchas
 
 - **Image bytes must be wrapped**: `types.Part.from_bytes(data=image, mime_type="image/jpeg")` — SDK rejects raw `bytes` in contents list. Mock tests won't catch this.
-
-## Implementation Plan
-
-The full implementation plan is in `docs/plans/2026-02-28-vlm-service.md`. It uses TDD (test-first) with 7 sequential tasks. Follow it with `superpowers:executing-plans`.
