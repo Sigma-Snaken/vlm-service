@@ -154,7 +154,7 @@ def test_inspect(api_key: str):
     })
 
     provider = GeminiProvider()
-    provider.configure(api_key=api_key, model="gemini-2.5-flash")
+    provider.configure(api_key=api_key, model="gemini-3-flash-preview")
 
     for label, photo_path in [("NG", NG_PHOTO), ("OK", OK_PHOTO)]:
         print(f"--- Inspecting: {label} photo ---")
@@ -190,7 +190,7 @@ def test_video(api_key: str):
     schema = build_inspection_schema(FACTORY_CONFIG)
 
     provider = GeminiProvider()
-    provider.configure(api_key=api_key, model="gemini-2.5-flash")
+    provider.configure(api_key=api_key, model="gemini-3-flash-preview")
 
     print(f"  File: {VIDEO_FILE}")
     print(f"  Uploading and analyzing (this may take a minute)...")
@@ -225,7 +225,7 @@ def test_report(api_key: str):
     schema = build_report_schema(report_config)
 
     provider = GeminiProvider()
-    provider.configure(api_key=api_key, model="gemini-2.5-flash")
+    provider.configure(api_key=api_key, model="gemini-3-flash-preview")
 
     report_prompt = """Generate a patrol inspection report based on the following data:
 

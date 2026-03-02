@@ -22,9 +22,9 @@ class GeminiProvider:
     def __init__(self):
         self._client: genai.Client | None = None
         self._api_key: str = ""
-        self._model: str = "gemini-2.5-flash"
+        self._model: str = "gemini-3-flash-preview"
 
-    def configure(self, api_key: str, model: str = "gemini-2.5-flash"):
+    def configure(self, api_key: str, model: str = "gemini-3-flash-preview"):
         """Configure or reconfigure the Gemini client.
 
         Only recreates the client if api_key or model changed.
