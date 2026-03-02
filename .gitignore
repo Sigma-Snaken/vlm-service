@@ -1,6 +1,7 @@
 .worktrees/
 docs/plans/
 *.jsonl
+scripts/
 __pycache__/
 *.pyc
 *.egg-info/
